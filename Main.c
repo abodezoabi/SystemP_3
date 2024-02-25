@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "StrList.h" // Ensure this is the correct header file for the StrList implementation
+#include "StrList.h" 
 #define MAX_STR_SIZE 256
 
 
@@ -21,45 +21,45 @@ int main() {
             StrList_insertLast(list,str);
         }
         break;
-            case 2: // ENTER_AT_INDEX
+            case 2: 
                 scanf("%d %s", &index, str);
                 StrList_insertAt(list, str, index);
                 break;
-            case 3: // PRINT
+            case 3: 
                 StrList_print(list);
                 break;
-            case 4: // LENGTH
+            case 4: 
                 printf("%zu\n", StrList_size(list)); // Assuming a function returning list length
                 break;
-            case 5: // PRINT_AT_INDEX
+            case 5: 
                 scanf("%d", &index);
                 StrList_printAt(list, index);
                 break;
-            case 6: // AMOUNT_OF_CHARS
+            case 6: 
                 printf("%d\n",StrList_printLen(list)); // Assuming this function exists
                 break;
-            case 7: // PRINT_ALL_TIMES
+            case 7: 
                 scanf("%s", str);
                 printf("%d\n",StrList_count(list, str)); // Assuming this counts and prints occurrences of str
                 break;
-            case 8: // DELETE_ALL_TIMES
+            case 8: 
                 scanf("%s", str);
                 StrList_remove(list, str);
                 break;
-            case 9: // DELETE_AT_INDEX
+            case 9: 
                 scanf("%d", &index);
                 StrList_removeAt(list, index);
                 break;
-            case 10: // REVERSE
+            case 10: 
                 StrList_reverse(list);
                 break;
-            case 11: // CLEAR
+            case 11: 
                 StrList_free(list); // Assuming this clears the list
                 break;
-            case 12: // SORT
+            case 12: 
                 StrList_sort(list);
                 break;
-            case 13: // CHECK_SORTED
+            case 13: 
                 if (StrList_isSorted(list)) {
                     printf("true\n");
                 } else {

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "StrList.h"
-#include <string.h> //  string library for string manipulations function
-#include <stdlib.h> // library for memory allocation and free function
+#include <string.h> 
+#include <stdlib.h> 
 
 // Define a Node structure for the linked list. Each node contains a string and a pointer to the next node.
 typedef struct Node {
