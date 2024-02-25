@@ -6,7 +6,7 @@
 
 int main() {
     int choice, index = 0;
-    char str[MAX_STR_SIZE]; // Assuming MAX_STR_SIZE is defined, e.g., #define MAX_STR_SIZE 256
+    char str[MAX_STR_SIZE]; 
     StrList *list = StrList_alloc(); // Allocate and initialize the list
 
     while ( 1) { // Loop until 0 is entered to exit
