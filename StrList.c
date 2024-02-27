@@ -176,7 +176,7 @@ Given an index and a list, remove the string at that index.
 void StrList_removeAt(StrList* StrList, int index){
     if (index < 0 || index >= StrList->size || StrList->head == NULL) return; // Boundary check
 
-    Node *temp; // Temporary node for deletion
+    Node *temp; // Temporary node to delete a node
     if (index == 0) { // If removing the head
         temp = StrList->head; // Temp points to head
         StrList->head = StrList->head->next; // Head is moved to next node
@@ -185,12 +185,12 @@ void StrList_removeAt(StrList* StrList, int index){
         for (int i = 0; i < index - 1;i++) { // Traverse to the node before the one to be removed
             n = n->next;
         }
-        temp = n->next; // Temp points to the node to be removed
-        n->next = n->next->next; // Bypass the node to be removed
+        temp = n->next; // Temp points at the node to be removed
+        n->next = n->next->next; // skip the node to be removed
     }
     free(temp->data); // Free the data of the node
     free(temp); // Free the node itself
-    StrList->size--; // Decrement the size of the list
+    StrList->size--; // Decrease the size of the list
 
 }
 
@@ -200,6 +200,9 @@ void StrList_removeAt(StrList* StrList, int index){
 */
 int StrList_isEqual(const StrList* StrList1, const StrList* StrList2){
     if (StrList1->size != StrList2->size) return 0; // Check if sizes are unequal
+    if(StrList1->head==NULL && StrList2->head==NULL) return 1;
+    if(StrList1->size==0 && StrList2->size==0) return 1;
+    
 
     Node* n1 = StrList1->head; // Pointer to traverse first list
     Node* n2 = StrList2->head; // Pointer to traverse second list

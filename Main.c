@@ -5,13 +5,13 @@
 
 
 int main() {
-    int choice, index = 0;
+    int command, index = 0;
     char str[MAX_STR_SIZE]; 
     StrList *list = StrList_alloc(); // Allocate and initialize the list
 
     while ( 1) { // Loop until 0 is entered to exit
-    scanf("%d",&choice);
-        switch (choice) {
+    scanf("%d",&command);
+        switch (command) {
             case 1: // Case for inserting strings at the end
                 int count;
         scanf("%d",&count);
@@ -29,18 +29,18 @@ int main() {
                 StrList_print(list);
                 break;
             case 4: 
-                printf("%zu\n", StrList_size(list)); // Assuming a function returning list length
+                printf("%zu\n", StrList_size(list));
                 break;
             case 5: 
                 scanf("%d", &index);
                 StrList_printAt(list, index);
                 break;
             case 6: 
-                printf("%d\n",StrList_printLen(list)); // Assuming this function exists
+                printf("%d\n",StrList_printLen(list));
                 break;
             case 7: 
                 scanf("%s", str);
-                printf("%d\n",StrList_count(list, str)); // Assuming this counts and prints occurrences of str
+                printf("%d\n",StrList_count(list, str)); 
                 break;
             case 8: 
                 scanf("%s", str);
@@ -54,7 +54,7 @@ int main() {
                 StrList_reverse(list);
                 break;
             case 11: 
-                StrList_free(list); // Assuming this clears the list
+                StrList_free(list); 
                 break;
             case 12: 
                 StrList_sort(list);
